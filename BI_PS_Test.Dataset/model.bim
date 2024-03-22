@@ -1,0 +1,412 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.126.1261.0 (24.02)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"silver CustomerInformation\",\"silver Product\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-SE",
+    "tables": [
+      {
+        "name": "silver CustomerInformation",
+        "columns": [
+          {
+            "name": "NK_CustomerID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "59ee181e-26d9-4cb3-ac9d-24361785c5f5",
+            "sourceColumn": "NK_CustomerID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "NK_AddressID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6909f2ee-9a3c-4b0f-9c0c-588ae5d8b521",
+            "sourceColumn": "NK_AddressID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "CustomerName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "799368ed-e105-41c6-981b-8f29b434508f",
+            "sourceColumn": "CustomerName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "02198222-1ae9-4438-a41b-402b25693c7a",
+            "sourceColumn": "Title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerAddress",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "27ecbb72-fc62-4b47-aabe-8460d79867da",
+            "sourceColumn": "CustomerAddress",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "City",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b72d8d62-745f-48bb-afb9-a29ab1742ec0",
+            "sourceColumn": "City",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StateProvince",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b62c5916-7589-47e6-94bb-d97eebfeef24",
+            "sourceColumn": "StateProvince",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PostalCode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f766958e-814b-4c76-a52d-147267f88ea5",
+            "sourceColumn": "PostalCode",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "33b35eb7-56d2-4ecd-a543-f2bc3a267fe8",
+        "partitions": [
+          {
+            "name": "silver CustomerInformation",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"ranstadsynapse-ondemand.sql.azuresynapse.net\"),",
+                "    SynapseDatabase = Source{[Name=\"SynapseDatabase\"]}[Data],",
+                "    silver_CustomerInformation = SynapseDatabase{[Schema=\"silver\",Item=\"CustomerInformation\"]}[Data]",
+                "in",
+                "    silver_CustomerInformation"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "silver Product",
+        "columns": [
+          {
+            "name": "ProductID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "93d9cf0c-26bd-412d-81de-f484a0bff1ac",
+            "sourceColumn": "ProductID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "571f47c0-ae3a-47a3-acb2-4f1cbd21beab",
+            "sourceColumn": "Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5eac06e7-61bf-43d7-97f0-99ed3b85f02a",
+            "sourceColumn": "ProductNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Color",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "176989d4-a6b5-493b-a10c-57d734464d7d",
+            "sourceColumn": "Color",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StandardCost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b86ec7a9-f8cf-47f6-a6d1-847144744d7e",
+            "sourceColumn": "StandardCost",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ListPrice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c02884e6-77e6-495d-aafa-fddad49c0285",
+            "sourceColumn": "ListPrice",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Size",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dad2441b-4b37-4ae7-b4ff-4ad19961ab22",
+            "sourceColumn": "Size",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Weight",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a99f0b82-98f9-48b5-9caf-de420f8938e4",
+            "sourceColumn": "Weight",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ProductCategoryID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eb9a2d40-6c53-420d-a5c4-4ca928e289b9",
+            "sourceColumn": "ProductCategoryID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "ProductModelID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a51f4ab5-11e3-45cd-b676-847aa37255e0",
+            "sourceColumn": "ProductModelID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "SellStartDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "e1e03906-55a7-43a6-b822-9507ff094741",
+            "sourceColumn": "SellStartDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SellEndDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "590098ca-4085-4c85-a545-4367d59966a6",
+            "sourceColumn": "SellEndDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiscontinuedDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "6ac84f54-facb-4dd7-9469-9f39effb6d11",
+            "sourceColumn": "DiscontinuedDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFrom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "cb073edb-b4d5-48ab-8c8e-3c4a157f4c10",
+            "sourceColumn": "ValidFrom",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidTo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "78603609-2ff4-43aa-8b28-c131947af14d",
+            "sourceColumn": "ValidTo",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "44c0847f-74be-49e5-b45d-590300e058a9",
+        "partitions": [
+          {
+            "name": "silver Product",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"ranstadsynapse-ondemand.sql.azuresynapse.net\"),",
+                "    SynapseDatabase = Source{[Name=\"SynapseDatabase\"]}[Data],",
+                "    silver_Product = SynapseDatabase{[Schema=\"silver\",Item=\"Product\"]}[Data]",
+                "in",
+                "    silver_Product"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
